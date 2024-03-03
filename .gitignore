@@ -1,0 +1,10 @@
+# melange artifacts
+melange.rsa
+packages/
+
+# apko artifacts
+kube-webhook-certgen.tar
+sbom-aarch64.cdx
+sbom-aarch64.spdx.json
+sbom-index.cdx
+sbom-index.spdx.json

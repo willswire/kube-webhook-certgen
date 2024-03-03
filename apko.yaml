@@ -1,0 +1,17 @@
+contents:
+  repositories:
+    - https://dl-cdn.alpinelinux.org/alpine/edge/main
+    - https://dl-cdn.alpinelinux.org/alpine/edge/community
+    - '@local /work/packages'
+  packages:
+    - kube-webhook-certgen@local
+accounts:
+  groups:
+    - groupname: nonroot
+      gid: 65532
+  users:
+    - username: nonroot
+      uid: 65532
+  run-as: nonroot
+entrypoint:
+  command: /usr/bin/kube-webhook-certgen
