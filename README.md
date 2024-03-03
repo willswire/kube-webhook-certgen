@@ -15,5 +15,12 @@ docker run --privileged --rm -v "${PWD}":/work \
   --signing-key melange.rsa
 
 # build container
+docker run --rm --workdir /work -v ${PWD}:/work cgr.dev/chainguard/apko \
+  build apko.yaml kube-webhook-certgen:test kube-webhook-certgen.tar \
+  --arch host \
+  -k melange.rsa.pub
 
+# run container
+docker load < kube-webhook-certgen.tar
+docker run --rm kube-webhook-certgen:test-arm64
 ```
