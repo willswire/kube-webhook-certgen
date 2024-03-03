@@ -11,11 +11,6 @@ environment:
     repositories:
       - https://dl-cdn.alpinelinux.org/alpine/edge/main
       - https://dl-cdn.alpinelinux.org/alpine/edge/community
-    packages:
-      - bash
-      - busybox
-      - ca-certificates-bundle
-      - go
 
 pipeline:
   - uses: git-checkout
